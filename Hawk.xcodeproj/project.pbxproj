@@ -15,6 +15,7 @@
 		95C4C70C2024726100E42BC0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C4C70B2024726100E42BC0 /* main.m */; };
 		95C4C7162024726100E42BC0 /* HawkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C4C7152024726100E42BC0 /* HawkTests.m */; };
 		95C4C7212024726100E42BC0 /* HawkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C4C7202024726100E42BC0 /* HawkUITests.m */; };
+		95C4C730202473B000E42BC0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C4C72F202473B000E42BC0 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		95C4C71C2024726100E42BC0 /* HawkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HawkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C4C7202024726100E42BC0 /* HawkUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HawkUITests.m; sourceTree = "<group>"; };
 		95C4C7222024726100E42BC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95C4C72F202473B000E42BC0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95C4C730202473B000E42BC0 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +88,7 @@
 				95C4C7142024726100E42BC0 /* HawkTests */,
 				95C4C71F2024726100E42BC0 /* HawkUITests */,
 				95C4C6FA2024726100E42BC0 /* Products */,
+				95C4C72E202473B000E42BC0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +134,14 @@
 				95C4C7222024726100E42BC0 /* Info.plist */,
 			);
 			path = HawkUITests;
+			sourceTree = "<group>";
+		};
+		95C4C72E202473B000E42BC0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95C4C72F202473B000E42BC0 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,6 +445,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2Q6LD6VMBE;
 				INFOPLIST_FILE = Hawk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ottisoftware.Hawk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -447,6 +460,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2Q6LD6VMBE;
 				INFOPLIST_FILE = Hawk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ottisoftware.Hawk;
 				PRODUCT_NAME = "$(TARGET_NAME)";

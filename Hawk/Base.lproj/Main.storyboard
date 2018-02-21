@@ -1,24 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Light</string>
+            <string>HelveticaNeue-Thin</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ve6-bf-KIf">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bnT-DC-yXj">
+                                <rect key="frame" x="0.0" y="0.0" width="166" height="375"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Wn-sS-354">
+                                        <rect key="frame" x="15" y="327" width="138" height="30"/>
+                                        <color key="backgroundColor" red="0.11764705882352941" green="0.84228378530000003" blue="0.37431067229999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="t2L-lt-Ofp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="START">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startFlightB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lzm-42-3Ui"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKS-ak-aEf">
+                                        <rect key="frame" x="15" y="285" width="138" height="30"/>
+                                        <color key="backgroundColor" red="0.92549019610000005" green="0.1598761719" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="CLEAR">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clearFlightB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DHc-xp-Y0J"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Z8V-0t-Td8">
+                                        <rect key="frame" x="15" y="20" width="138" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="BqA-7I-TYS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="28"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LfD-6h-v9P">
+                                        <rect key="frame" x="15" y="88" width="138" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Aq2-iW-NcV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="28"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.23137254900000001" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="8Wn-sS-354" firstAttribute="top" secondItem="UKS-ak-aEf" secondAttribute="bottom" constant="12" id="006-Nh-z3E"/>
+                                    <constraint firstItem="Z8V-0t-Td8" firstAttribute="top" secondItem="bnT-DC-yXj" secondAttribute="top" constant="20" id="5ft-0v-atX"/>
+                                    <constraint firstItem="Z8V-0t-Td8" firstAttribute="leading" secondItem="LfD-6h-v9P" secondAttribute="leading" id="Aed-18-mtp"/>
+                                    <constraint firstItem="LfD-6h-v9P" firstAttribute="leading" secondItem="UKS-ak-aEf" secondAttribute="leading" id="HIv-E2-Pug"/>
+                                    <constraint firstAttribute="bottom" secondItem="8Wn-sS-354" secondAttribute="bottom" constant="18" id="L7l-0B-AYd"/>
+                                    <constraint firstItem="LfD-6h-v9P" firstAttribute="trailing" secondItem="UKS-ak-aEf" secondAttribute="trailing" id="MwP-NQ-Mae"/>
+                                    <constraint firstItem="UKS-ak-aEf" firstAttribute="trailing" secondItem="8Wn-sS-354" secondAttribute="trailing" id="WbA-tB-IJH"/>
+                                    <constraint firstAttribute="trailing" secondItem="Z8V-0t-Td8" secondAttribute="trailing" constant="13" id="er1-hk-iYR"/>
+                                    <constraint firstItem="Z8V-0t-Td8" firstAttribute="trailing" secondItem="LfD-6h-v9P" secondAttribute="trailing" id="gBv-Ol-Rby"/>
+                                    <constraint firstItem="UKS-ak-aEf" firstAttribute="leading" secondItem="8Wn-sS-354" secondAttribute="leading" id="hQJ-F3-Yit"/>
+                                    <constraint firstItem="Z8V-0t-Td8" firstAttribute="leading" secondItem="bnT-DC-yXj" secondAttribute="leading" constant="15" id="kfi-5J-Kf3"/>
+                                    <constraint firstItem="LfD-6h-v9P" firstAttribute="top" secondItem="Z8V-0t-Td8" secondAttribute="bottom" constant="8" symbolic="YES" id="rOB-GA-iqA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bnT-DC-yXj" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9WK-v9-xDo"/>
+                            <constraint firstItem="bnT-DC-yXj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CjK-jy-tjh"/>
+                            <constraint firstItem="ve6-bf-KIf" firstAttribute="bottom" secondItem="bnT-DC-yXj" secondAttribute="bottom" id="HnQ-LA-kC8"/>
+                            <constraint firstItem="bnT-DC-yXj" firstAttribute="top" secondItem="ve6-bf-KIf" secondAttribute="top" id="SUK-qV-1rS"/>
+                            <constraint firstAttribute="trailing" secondItem="ve6-bf-KIf" secondAttribute="trailing" id="VLR-qU-u8b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bnT-DC-yXj" secondAttribute="trailing" constant="501" id="X8o-xU-fDy"/>
+                            <constraint firstItem="bnT-DC-yXj" firstAttribute="leading" secondItem="ve6-bf-KIf" secondAttribute="leading" id="xLk-uj-87p"/>
+                            <constraint firstItem="ve6-bf-KIf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zRB-lp-exx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="areaMapView" destination="ve6-bf-KIf" id="APv-pO-fe5"/>
+                        <outlet property="clearFlightBO" destination="UKS-ak-aEf" id="Ppq-dn-KMZ"/>
+                        <outlet property="startFlightBO" destination="8Wn-sS-354" id="k5u-ft-m1a"/>
+                        <outlet property="totalDistanceL" destination="Z8V-0t-Td8" id="O0P-U7-dIy"/>
+                        <outlet property="totalFlightTimeL" destination="LfD-6h-v9P" id="W7T-ze-6HG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.18140929535232" y="132"/>
         </scene>
     </scenes>
 </document>
